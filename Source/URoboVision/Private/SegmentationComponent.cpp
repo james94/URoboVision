@@ -104,7 +104,7 @@ FPrimitiveSceneProxy* USegmentationComponent::CreateSceneProxy(UStaticMeshCompon
 FPrimitiveSceneProxy* USegmentationComponent::CreateSceneProxy(USkeletalMeshComponent* SkeletalMeshComponent)
 {
 	UMaterialInterface* ProxyMaterial = SegmentationMID;
-	ERHIFeatureLevel::Type SceneFeatureLevel = GetWorld()->FeatureLevel;
+	ERHIFeatureLevel::Type SceneFeatureLevel = GetWorld()->GetFeatureLevel();
 	FSkeletalMeshRenderData* SkelMeshRenderData = SkeletalMeshComponent->GetSkeletalMeshRenderData();
 	if (SkelMeshRenderData &&
 		SkelMeshRenderData->LODRenderData.IsValidIndex(SkeletalMeshComponent->GetPredictedLODLevel()) &&

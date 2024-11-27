@@ -10,6 +10,7 @@
 #include "ConstructorHelpers.h"
 #endif
 #include "EngineUtils.h"
+#include "Engine/Engine.h"
 #include "StopTime.h"
 #include "Server.h"
 #include "PacketBuffer.h"
@@ -437,7 +438,7 @@ void ARGBDCamera::ShowFlagsPostProcess(FEngineShowFlags &ShowFlags) const
 	ShowFlags.SetPostProcessing(true);
 	ShowFlags.SetPostProcessMaterial(true);
 
-	GVertexColorViewMode = EVertexColorViewMode::Color;
+	// auto GVertexColorViewMode = EVertexColorViewMode::Color;
 }
 
 void ARGBDCamera::ShowFlagsVertexColor(FEngineShowFlags &ShowFlags) const
@@ -454,7 +455,7 @@ void ARGBDCamera::ShowFlagsVertexColor(FEngineShowFlags &ShowFlags) const
 	ShowFlags.SetHMDDistortion(false);
 	ShowFlags.SetTonemapper(false); // This won't take effect here
 
-	GVertexColorViewMode = EVertexColorViewMode::Color;
+	// auto GVertexColorViewMode = EVertexColorViewMode::Color;
 }
 
 // void ARGBDCamera::ShowFlagsVertexColor(FEngineShowFlags &ShowFlags) const
@@ -471,7 +472,7 @@ void ARGBDCamera::ShowFlagsVertexColor(FEngineShowFlags &ShowFlags) const
 // 	ShowFlags.SetHMDDistortion(false);
 // 	ShowFlags.SetTonemapper(false); // This won't take effect here
 //
-// 	// GVertexColorViewMode = EVertexColorViewMode::Color;
+// 	// auto GVertexColorViewMode = EVertexColorViewMode::Color;
 // 	SetVisibility(ShowFlags, PreviousShowFlags); // Store the visibility of the scene, such as folliage and landscape.
 // }
 
